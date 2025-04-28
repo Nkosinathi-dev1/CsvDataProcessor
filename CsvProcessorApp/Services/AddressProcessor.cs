@@ -17,8 +17,9 @@ namespace CsvProcessorApp.Services
         }
 
         private string GetStreetName(string address)
-        {
-            var parts = address.Split(' ');
+        { 
+            //xunit tested and modified 
+            var parts = address.Split(' ', StringSplitOptions.RemoveEmptyEntries);
             return string.Join(" ", parts.Skip(1)).Trim();
         }
 
